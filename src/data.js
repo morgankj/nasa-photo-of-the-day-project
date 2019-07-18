@@ -16,6 +16,12 @@ export default class Data extends Component {
 
   // Function Run on Date Change
   handleChange(date) {
+    this.setState(
+      {
+        startDate: date
+      },
+      () => {}
+    );
     setTimeout(
       axios
         .get(
