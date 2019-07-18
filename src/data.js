@@ -69,7 +69,11 @@ export default class Data extends Component {
       <>
         <h1>Select Date:</h1>
         {/* Displays Calendar */}
-        <DatePicker selected={this.state.begin} onChange={this.handleChange} />
+        <DatePicker
+          maxDate={this.state.begin}
+          selected={this.state.begin}
+          onChange={this.handleChange}
+        />
         <Cards data={this.state.data} />
       </>
     );
