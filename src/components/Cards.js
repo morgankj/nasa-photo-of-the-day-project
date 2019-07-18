@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "react-datepicker/dist/react-datepicker.css";
+import { ReadableText } from "./styled-components/ReadableText";
 
 export default class Objects extends Component {
   render() {
@@ -27,7 +28,7 @@ export default class Objects extends Component {
         )}
 
         {/* Description */}
-        <p>{this.props.data[0].explanation}</p>
+        <ReadableText>{this.props.data[0].explanation}</ReadableText>
         {/* <Placeholder dates={this.state.startDate} /> */}
       </div>
     );
