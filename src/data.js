@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 var moment = require("moment");
 const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const begin = moment().utcOffset(timezone)._d;
+const max = moment().utcOffset(timezone)._d;
 const currentTime = moment()
   .utcOffset(timezone)
   .format();
@@ -14,6 +15,7 @@ export default class Data extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      max: max,
       begin: begin,
       startDate: currentTime,
       data: null
@@ -70,7 +72,7 @@ export default class Data extends Component {
         <h1>Select Date:</h1>
         {/* Displays Calendar */}
         <DatePicker
-          maxDate={this.state.begin}
+          maxDate={this.state.max}
           selected={this.state.begin}
           onChange={this.handleChange}
         />
