@@ -25,9 +25,11 @@ export default class Data extends Component {
     setTimeout(
       axios
         .get(
-          `https://api.nasa.gov/planetary/apod?api_key=X7831OHO7jNbCUFp6ZquUbFjI2txHRDvsbay1fU4&date=${date
-            .toISOString()
-            .slice(0, -14)}`
+          `https://api.nasa.gov/planetary/apod?api_key=X7831OHO7jNbCUFp6ZquUbFjI2txHRDvsbay1fU4&date=${
+            this.state.startDate == "2019-07-17"
+              ? this.state.startDate.toISOString().slice(0, -14)
+              : date.toISOString().slice(0, -14)
+          }`
         )
         .then(response => {
           this.setState({
