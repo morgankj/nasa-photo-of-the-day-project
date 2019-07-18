@@ -129,6 +129,17 @@ svg {
   animation: anticlockwisespin 1.4s linear 10;
 }
 
+input {
+  width: 15rem;
+  text-align: center;
+  border-radius: 20px;
+  padding: 1rem;
+  cursor: pointer;
+}
+input:hover {
+  opacity: 0.9;
+}
+
 @keyframes clockwisespin {
   from {
     transform: rotate(0deg);
