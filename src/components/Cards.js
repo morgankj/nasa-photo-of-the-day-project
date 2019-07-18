@@ -13,7 +13,11 @@ export default class Objects extends Component {
         <h1>{this.props.data[0].title}</h1>
         {/* Youtube Video */}
         {this.props.data[0].url.includes("image") ? (
-          <img src={this.props.data[0].url} alt="Space Img" />
+          <img
+            src={this.props.data[0].url}
+            alt="Space Img"
+            onClick={() => window.open(this.props.data[0].hdurl, "_blank")}
+          />
         ) : (
           // Embeded Youtube Video
           <iframe

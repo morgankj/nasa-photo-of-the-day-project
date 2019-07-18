@@ -134,6 +134,10 @@ input:hover {
   opacity: 0.9;
 }
 
+img {
+  max-width: 1920px;
+}
+
 @keyframes clockwisespin {
   from {
     transform: rotate(0deg);
