@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { ReadableText } from "./styled-components/ReadableText";
+import { makeStyles } from "@material-ui/core/styles";
+import Tooltip from "@material-ui/core/Tooltip";
 
 export default class Objects extends Component {
   render() {
@@ -13,11 +15,13 @@ export default class Objects extends Component {
         <h1>{this.props.data[0].title}</h1>
         {/* Youtube Video */}
         {this.props.data[0].url.includes("image") ? (
-          <img
-            src={this.props.data[0].url}
-            alt="Space Img"
-            onClick={() => window.open(this.props.data[0].hdurl, "_blank")}
-          />
+          <Tooltip title="Click on image to view the image in HD">
+            <img
+              src={this.props.data[0].url}
+              alt="Space Img"
+              onClick={() => window.open(this.props.data[0].hdurl, "_blank")}
+            />
+          </Tooltip>
         ) : (
           // Embeded Youtube Video
           <iframe

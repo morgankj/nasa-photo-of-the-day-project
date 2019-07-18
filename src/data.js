@@ -9,7 +9,6 @@ const currentTime = moment()
   .utcOffset(timezone)
   .format();
 
-console.log("begin", begin);
 export default class Data extends Component {
   // Holds State
   constructor(props) {
@@ -35,7 +34,7 @@ export default class Data extends Component {
       axios
         .get(
           `https://api.nasa.gov/planetary/apod?api_key=X7831OHO7jNbCUFp6ZquUbFjI2txHRDvsbay1fU4&date=${
-            this.state.startDate == "2019-07-17"
+            this.state.startDate === "2019-07-17"
               ? this.state.startDate.toISOString().slice(0, -14)
               : date.toISOString().slice(0, -14)
           }`
@@ -66,7 +65,6 @@ export default class Data extends Component {
   }
 
   render() {
-    console.log(this.state.startDate);
     return (
       <>
         <h1>Select Date:</h1>
